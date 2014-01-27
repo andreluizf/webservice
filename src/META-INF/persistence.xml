@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+	<persistence-unit name="CardValidationPU"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.nutricao.models.repository.nutricionista.Nutricionista</class>
+		<class>com.nutricao.models.repository.receita.Receitas</class>
+		<class>com.nutricao.models.repository.usuario.Usuario</class>
+		<class>com.nutricao.models.repository.mensagem.Mensagem</class>
+		<class>com.nutricao.models.repository.paciente.Paciente</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://mysql.nutricaonline.com:3306/nutricaonline?zeroDateTimeBehavior=convertToNull" />
+			<property name="javax.persistence.jdbc.password" value="Sup0rt3" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.user" value="nutricaonline" />
+		</properties>
+	</persistence-unit>
+</persistence>

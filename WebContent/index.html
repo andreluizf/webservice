@@ -3,17 +3,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bandas</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-<script type="text/javascript">
-	$(function () {
-		$.getJSON("/webservices/rest/bandas", function (data) {
-			console.log(data);
-		});
-	});
-</script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
 </head>
 <body>
-<ul id="bandas">
-</ul>
+	<script type="text/javascript">
+		$.ajax({
+			type : "POST",
+			url : "http://localhost:13450/webservices/rest/nutricao/postMensagem",
+			contentType : "application/x-www-form-urlencoded",
+			data : {
+				"alt" : 1,
+				"lat" : 2,
+				"long" : 3,
+				"time" : 4
+			},
+			success : function(data) {
+				console.log(data);
+
+			},
+			error : function(xhr, ajaxOptions, thrownError) {
+				alert(xhr.status);
+				alert(thrownError);
+			}
+		})
+	</script>
+	<div>
+		<p>- nutricionistas</p>
+		<p>- receitas</p>
+		<p>- Usuario:email/senha</p>
+		<p>- menagem: paciente</p>
+		<p>- paciente: paciente</p>
+	</div>
+	</ul>
 </body>
 </html>
